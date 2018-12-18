@@ -23,6 +23,8 @@ if (typeof window !== 'undefined') {
 }
 if (GlobalVue) {
   GlobalVue.use(plugin);
+} else {
+  component.install = install;
 }
 
 // To allow use as module (npm/webpack/etc.) export component
