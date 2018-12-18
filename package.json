@@ -1,6 +1,6 @@
 {
   "name": "vue-date-mobile",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "meadiven",
   "description": "A vue mobile calendar component.",
   "main": "dist/vue-mobile-calendar.umd.js",

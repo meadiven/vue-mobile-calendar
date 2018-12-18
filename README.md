@@ -49,10 +49,10 @@ export default {
 | @change | Select date object  | The day which user clicked     |
 | @move   | Date object         | The first day in changed month |
 
-Select date object eg:
+Event e.g.
 
 ```xml
-<vue-mobile-calendar v-if="true" @move="changeMonth" @change="selectDay" :lunar="true"></vue-mobile-calendar>
+<vue-mobile-calendar @move="changeMonth" @change="selectDay" :lunar="true"></vue-mobile-calendar>
 ```
 ```js
 export default {
@@ -65,6 +65,30 @@ export default {
       changeMonth (date) {
         console.log(date) // Date Object
       },
+  }
+}
+```
+## Slot
+
+作用域插槽会插入到日历每天的单元格中，且可以访问到当天的日期对象
+
+```xml
+<vue-mobile-calendar>
+    <div slot-scope="{date}" class="price">{{prices[date.dateStr].price}}</div>
+</vue-mobile-calendar>
+```
+
+```js
+export default {
+  components: { VueMobileCalendar },
+  data () {
+      return {
+          prices: {
+              '2018-12-18': {
+                  price: '$222'
+              }
+          }
+      }
   }
 }
 ```
